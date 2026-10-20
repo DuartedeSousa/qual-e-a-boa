@@ -66,8 +66,8 @@ export default function Home(){
 
     }
 
-//FUNÇÃO DE REMOVER UMA OPÇÃO
-function remover(nomeParaRemover){
+    //FUNÇÃO DE REMOVER UMA OPÇÃO
+    function remover(nomeParaRemover){
 
         const listaNova = opcoes.filter((opcao) => opcao !== nomeParaRemover);
         setOpcoes(listaNova);
