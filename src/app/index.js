@@ -9,7 +9,7 @@ import {useState, useEffect } from "react";
 // TextInput -> um campo para digitar
 // pressable -> qualquer coisa que dá pra tocar: nosso botão
 // StyleSheet -> ferramenta pra escrever os estilos.
-import {View, Text, TextInput, Pressable, ScrollView, styleSheet } from "react-native";
+import {View, Text, TextInput, Pressable, ScrollView, StyleSheet } from "react-native";
 import { cores } from "../data/tema"
 import { Accelerometer } from "expo-sensors";
 import * as Haptics from "expo-haptics";
@@ -106,8 +106,24 @@ export default function Home(){
     }, [opcoes]);
 
     // PARA REALIZAÇÃO DO TESTE npx expo start, depois pressione "a"
+    // https://dontpad.com.br/senai-dsii2sesi
 
     //AGORA VAMOS COMEÇAR A DESENHA A TELA --> JSX
     //
 
+    return (
+        <ScrollView style={styles.container} contentContainerStyle={styles.conteudo}>
+        <Text style={styles.titulo}>Qual é a boa? 🎲</Text>
+        <Text style={styles.subtitulo}>Monte a lista e chacoalhe o celular</Text>
+
+        </ScrollView>
+    );
 }
+
+const styles = StyleSheet.create({
+    container: { flex: 1, backgroundColor: cores.fundo },
+    conteudo: { padding: 20, paddingTop: 60, paddingBottom: 40 },
+
+    titulo: { fontSize: 30, fontWeight: "bold", color: cores.textoPrincipal },
+    subtitulo: { fontSize: 15, color: cores.textoSecundario, marginTop: 4, marginBottom: 24 },
+});
