@@ -103,7 +103,8 @@ function remover(nomeParaRemover){
                 sortear();
             }
         });
-
+        // a função é devolvida aqui é a "LIMPEZA": roda quando a tela sai.
+        // Desliga o sensor (como a luz ao sair do quarto)
         return () => sensor.remove();
         //[opcoes] diz: "religue o sensor sempre que a lista mudar"
     }, [opcoes]);
